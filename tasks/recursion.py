@@ -1,4 +1,6 @@
-# Rekurencja, cwiczenia praktyczne.
+"""
+    Rekurencja, cwiczenia praktyczne.
+"""
 
 def print_stars(n):
     """Rekurencyjne wypisywanie n linii z gwiazdka."""

@@ -24,4 +24,5 @@ Podstawy programowania w języku Python
 
 Zadania
 ----------------------------
-01. [Rekurencja, ćwiczenia praktyczne (silnia, fibonacci etc.)](/tasks/recursion.py).
+01. [Rekurencja, ćwiczenia praktyczne (silnia, fibonacci etc.)](/tasks/recursion.py),
+02. [Implementacja punktu w przestrzeni 2D i 3D.](/tasks/point.py).
