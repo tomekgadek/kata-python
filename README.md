@@ -28,4 +28,5 @@ Zadania
 02. [Implementacja punktu w przestrzeni 2D i 3D](/tasks/point.py),
 03. [Popularna dziecięca gra 'FizzBuzz'](/tasks/fizz_buzz.py),
 04. [Jak działają funkcje map(), filter() i reduce()?](/tasks/map_filter_reduce.py),
-05. [Sito Erastotenesa](/tasks/prime_numbers.py).
+05. [Sito Erastotenesa](/tasks/prime_numbers.py),
+06. [Jak dziala modul 'pickle'?](/tasks/pickle_sample.py).
