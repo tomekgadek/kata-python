@@ -30,4 +30,5 @@ Zadania
 04. [Jak działają funkcje map(), filter() i reduce()?](/tasks/map_filter_reduce.py),
 05. [Sito Erastotenesa](/tasks/prime_numbers.py),
 06. [Jak działa moduł 'pickle'?](/tasks/pickle_sample.py),
-07. [Klasa 'Time'. Operacje związane z czasem](/tasks/time_operations.py).
+07. [Klasa 'Time'. Operacje związane z czasem](/tasks/time_operations.py),
+08. [Implementacja stosu w języku Python](/tasks/stack.py).
