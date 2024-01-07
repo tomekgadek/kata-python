@@ -7,13 +7,22 @@
 """
 
 class Time:
-    def __init__(self, h, m, s):
+    def __init__(self, h=0, m=0, s=0):
         self.h = h
         self.m = m
         self.s = s
     
     def __str__(self):
         return "{}:{}:{}".format(self.h, self.m, self.s)
+    
+    def __add__(self, other):
+        time = Time(self.h, self.m, self.s)
+        time.increment(other.time2sec())
+
+        return time
+    
+    def __cmp__(self, other):
+        return self.time2sec() - other.time2sec()
     
     def increment(self, sec):
         self.s += sec
@@ -53,3 +62,11 @@ assert time.time2sec() == (19 * 3600 + 61)
 time.increment(3600 * 5 - 61)
 assert str(time) == "0:0:0"
 assert time.time2sec() == 0
+
+t1 = Time(1, 0, 1)
+t2 = Time(0, 1, 0)
+
+t3 = t1 + t2
+assert str(t3) == "1:1:1"
+assert not(t1 == t2)
+assert t1 == t1
