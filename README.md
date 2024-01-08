@@ -31,4 +31,5 @@ Zadania
 05. [Sito Erastotenesa](/tasks/prime_numbers.py),
 06. [Jak działa moduł 'pickle'?](/tasks/pickle_sample.py),
 07. [Klasa 'Time'. Operacje związane z czasem](/tasks/time_operations.py),
-08. [Implementacja stosu w języku Python](/tasks/stack.py).
+08. [Implementacja stosu w języku Python](/tasks/stack.py),
+09. [Implementacja kolejki w języku Python](/tasks/queue.py).
