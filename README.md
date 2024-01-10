@@ -32,4 +32,5 @@ Zadania
 06. [Jak działa moduł 'pickle'?](/tasks/pickle_sample.py),
 07. [Klasa 'Time'. Operacje związane z czasem](/tasks/time_operations.py),
 08. [Implementacja stosu w języku Python](/tasks/stack.py),
-09. [Implementacja kolejki w języku Python](/tasks/queue.py).
+09. [Implementacja kolejki w języku Python](/tasks/queue.py),
+10. [Implementacja podstawowych operacji na ułamkach zwykłych w języku Python](/tasks/fraction.py).
