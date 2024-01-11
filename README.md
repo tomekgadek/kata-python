@@ -33,4 +33,5 @@ Zadania
 07. [Klasa 'Time'. Operacje związane z czasem](/tasks/time_operations.py),
 08. [Implementacja stosu w języku Python](/tasks/stack.py),
 09. [Implementacja kolejki w języku Python](/tasks/queue.py),
-10. [Implementacja podstawowych operacji na ułamkach zwykłych w języku Python](/tasks/fraction.py).
+10. [Implementacja podstawowych operacji na ułamkach zwykłych w języku Python](/tasks/fraction.py),
+11. [Generator miarki w języku Python](/tasks/measure.py).
