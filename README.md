@@ -19,7 +19,7 @@ Podstawy programowania w języku Python
 13. [Własny moduł w języku Python](/basic/lesson13.py),
 14. [Import modułów w języku Python](/basic/lesson13_import.py),
 15. [Klasy i dziedziczenie w języku Python](/basic/lesson14.py),
-16. [Wyjatki w jezyku Python](/basic/lesson15.py),
+16. [Wyjątki w języku Python](/basic/lesson15.py),
 17. [Uzyskiwanie pomocy w języku Python](/basic/lesson16.py).
 
 Zadania
@@ -31,7 +31,8 @@ Zadania
 05. [Sito Erastotenesa](/tasks/prime_numbers.py),
 06. [Jak działa moduł 'pickle'?](/tasks/pickle_sample.py),
 07. [Klasa 'Time'. Operacje związane z czasem](/tasks/time_operations.py),
-08. [Implementacja stosu w języku Python](/tasks/stack.py),
-09. [Implementacja kolejki w języku Python](/tasks/queue.py),
-10. [Implementacja podstawowych operacji na ułamkach zwykłych w języku Python](/tasks/fraction.py),
-11. [Generator miarki w języku Python](/tasks/measure.py).
+08. [Implementacja stosu](/tasks/stack.py),
+09. [Implementacja kolejki](/tasks/queue.py),
+10. [Implementacja podstawowych operacji na ułamkach zwykłych](/tasks/fraction.py),
+11. [Generator miarki](/tasks/measure.py),
+12. [Generator czworokąta](/tasks/rectangle_generator.py).
