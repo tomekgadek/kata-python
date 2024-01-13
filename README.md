@@ -35,4 +35,5 @@ Zadania
 09. [Implementacja kolejki](/tasks/queue.py),
 10. [Implementacja podstawowych operacji na ułamkach zwykłych](/tasks/fraction.py),
 11. [Generator miarki](/tasks/measure.py),
-12. [Generator czworokąta](/tasks/rectangle_generator.py).
+12. [Generator czworokąta](/tasks/rectangle_generator.py),
+13. [Program do konwersji liczb zapisanych w systemie Rzymskim na liczby zapisane w systemie dziesiętnym](/tasks/rome.py).
