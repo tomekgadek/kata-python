@@ -37,4 +37,6 @@ Zadania
 11. [Generator miarki](/tasks/measure.py),
 12. [Generator czworokąta](/tasks/rectangle_generator.py),
 13. [Program do konwersji liczb zapisanych w systemie Rzymskim na liczby zapisane w systemie dziesiętnym](/tasks/rome.py),
-14. [Rekurencja vs rekurencja ogonowa](/tasks/recursion_tail.py).
+14. [Rekurencja vs rekurencja ogonowa](/tasks/recursion_tail.py),
+15. [Jak spłaszczyć skomplikowaną listę?](/tasks/flatten.py).
+
