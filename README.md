@@ -40,3 +40,6 @@ Zadania
 14. [Rekurencja vs rekurencja ogonowa](/tasks/recursion_tail.py),
 15. [Jak spłaszczyć skomplikowaną listę?](/tasks/flatten.py).
 
+Szyfry proste
+----------------------------
+01. [Szyfr Cezara](/cipher/caesar.py).
