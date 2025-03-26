@@ -47,4 +47,5 @@ Szyfry proste
 Matematyka
 ----------------------------
 01. [Moduł, który obsługuje podstawowe operacje na permitacjach.](/math/perms.py),
-02. [Implementacja punktu w przestrzeni 2D](./math/point.py).
+02. [Implementacja punktu w przestrzeni 2D](./math/point.py),
+03. [Implementacja wektora](./math/vector.py).
