@@ -43,3 +43,7 @@ Zadania
 Szyfry proste
 ----------------------------
 01. [Szyfr Cezara](/cipher/caesar.py).
+
+Matematyka
+----------------------------
+01. [Moduł, który obsługuje podstawowe operacje na permitacjach.](/math/perms.py).
