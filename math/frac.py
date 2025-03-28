@@ -1,42 +1,84 @@
 """
     frac.py: modul, ktory obsluguje podstawowe operacje na ulamkach.
     
-    TODO: jeszcze slabo to dziala:
-    + ulamki powinny byc skracane
-    + nie ma obslugi dzielenia przez 0
-    + sporo technik bedzie do optymalizacji
+    TODO: jeszcze slabo to dziala, klasa wymaga jeszcze refaktoryzacji ;)
 """
+
+class FracError(Exception):
+    def __init__(self, message):
+        self.message = message
 
 class Frac:
     def __init__(self, x = 0, y = 1):
-        self.x = x
-        self.y = y
+        if y == 0:
+            raise FracError("Dzielenie przez 0!")
+        self.x = x // self._gcd(x, y)
+        self.y = y // self._gcd(x, y)
 
     def __str__(self):
-        return f"{self.x}/{self.y}"
+        if self.y != 1:
+            return f"{self.x}/{self.y}"
+        else:
+            return str(self.x)
 
     def __repr__(self):
         return f"Frac(x={self.x}, y={self.y})"
 
     def __add__(self, other):
+        if isinstance(other, int):
+            other = Frac(other)
+        elif isinstance(other, float):
+            other = self._float_to_frac(other)
+        
         denominator = self.y * other.y
         first_numerator = int(denominator / self.y) * self.x
         second_numerator = int(denominator / other.y) * other.x
 
         return Frac(first_numerator + second_numerator, denominator)
     
+    __radd__ = __add__
+    
     def __sub__(self, other):
+        if isinstance(other, int):
+            other = Frac(other)
+        elif isinstance(other, float):
+            other = self._float_to_frac(other)
+
         denominator = self.y * other.y
         first_numerator = int(denominator / self.y) * self.x
         second_numerator = int(denominator / other.y) * other.x
 
         return Frac(first_numerator - second_numerator, denominator)
+    
+    def __rsub__(self, other):
+        if isinstance(other, float):
+            other = self._float_to_frac(other)
+            return Frac(other.x * self.y - self.x * other.y, self.y * other.y)
+        return Frac(self.y * other - self.x, self.y)
 
     def __mul__(self, other):
+        if isinstance(other, int):
+            other = Frac(other)
+        elif isinstance(other, float):
+            other = self._float_to_frac(other)
+
         return Frac(self.x * other.x, self.y * other.y)
 
+    __rmul__ = __mul__
+
     def __truediv__(self, other):
+        if isinstance(other, int):
+            other = Frac(other)
+        elif isinstance(other, float):
+            other = self._float_to_frac(other)
+
         return Frac(self.x * other.y, self.y * other.x)
+
+    def __rtruediv__(self, other):
+        if isinstance(other, float):
+            other = self._float_to_frac(other)
+            return Frac(self.y * other.x, self.x * other.y)
+        return Frac(self.y * other, self.x)
 
     def __pos__(self):
         return Frac(self.x, self.y)
@@ -47,18 +89,45 @@ class Frac:
     def __invert__(self):
         return Frac(self.y, self.x)
 
+    def _gcd(self, a, b):
+        while b != 0:
+            c = a % b
+            a = b
+            b = c
+        return a
+    
+    def _float_to_frac(self, digit_as_float = None):
+        float_txt = str(digit_as_float)
+        l = float_txt[:self._find(float_txt, "." )]
+        m = float_txt[self._find(float_txt, "." ) + 1:]
+
+        numerator = int(l) * pow(10, len(m)) + int(m)
+        denomintor = pow(10, len(m))
+
+        return Frac(numerator, denomintor)
+
+    def _find(self, napis=None, znak=None):
+        index = 0
+        for i in napis:
+            if i == znak:
+                break
+            index += 1
+        return index
+
 if __name__ == "__main__":
     f_1_4 = Frac(1, 4)
     f_1_2 = Frac(1, 2)
     
     assert f"{f_1_4}" == "1/4"
     assert repr(f_1_4) == "Frac(x=1, y=4)"
-    assert str(f_1_4 + f_1_2) == "6/8"
-    assert str(f_1_4 - f_1_2) == "-2/8"
+    assert str(f_1_4 + f_1_2) == "3/4"
+    assert str(f_1_4 - f_1_2) == "-1/4"
     assert str(f_1_4 * f_1_2) == "1/8"
-    assert str(f_1_4 / f_1_2) == "2/4"
+    assert str(f_1_4 / f_1_2) == "1/2"
+    assert str(1 + f_1_2) == "3/2"
+    assert str(2.0 * f_1_4) == "1/2"
     
     # operatory jednoargumentowe
     assert f"{+f_1_2}" == "1/2"
     assert f"{-f_1_2}" == "-1/2"
-    assert f"{~f_1_2}" == "2/1"
+    assert f"{~f_1_2}" == "2"
