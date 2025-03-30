@@ -25,7 +25,7 @@ class Vector:
     def __mul__(self, other):
         return self.x * other.x + self.y * other.y
     
-    def length( self ):
+    def length(self):
         return math.sqrt(self.x ** 2 + self.y ** 2)
 
 if __name__ == "__main__":
