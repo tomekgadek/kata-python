@@ -49,4 +49,5 @@ Matematyka
 01. [Moduł, który obsługuje podstawowe operacje na permitacjach.](/math/perms.py),
 02. [Implementacja punktu w przestrzeni 2D](./math/point.py),
 03. [Implementacja wektora](./math/vector.py),
-04. [Implementacja podstawowych operacji na ułamkach](./math/frac.py).
+04. [Implementacja podstawowych operacji na ułamkach](./math/frac.py),
+05. [Implementacja prostokata w przestrzeni 2D](./math/rectangle.py).
