@@ -7,8 +7,17 @@
 from point import Point
 from vector import Vector
 
+class RectangleError(Exception):
+    """
+        Wyjatek dla klasy Rectangle.
+    """
+    def __init__(self, message):
+        self.message = message
+
 class Rectangle:
     def __init__(self, x1 = 0, y1 = 0, x2 = 0, y2 = 0):
+        if x1 == x2 or y1 == y2:
+            raise RectangleError("Problem z konstrukcja prostokata.")
         self.pt1 = Point(x1, y1)
         self.pt2 = Point(x2, y2)
     def __str__(self):
