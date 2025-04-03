@@ -50,4 +50,5 @@ Matematyka
 02. [Implementacja punktu w przestrzeni 2D](./math/point.py),
 03. [Implementacja wektora](./math/vector.py),
 04. [Implementacja podstawowych operacji na ułamkach](./math/frac.py),
-05. [Implementacja prostokata w przestrzeni 2D](./math/rectangle.py).
+05. [Implementacja prostokata w przestrzeni 2D](./math/rectangle.py),
+06. [Implementacja klasy Time](./math/time.py).

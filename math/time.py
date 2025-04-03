@@ -1,5 +1,5 @@
 """
-    time.py: implementacja klasy Time i operacji na czasie.
+    time.py: implementacja klasy Time.
 """
 
 class Time:
