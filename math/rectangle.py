@@ -1,7 +1,5 @@
 """
     rectangle.py: implementacja prostokata w przestrzeni 2D.
-    
-    TODO: klasa wymaga jeszcze refaktoryzacji.
 """
 
 from point import Point
