@@ -41,6 +41,16 @@ class Rectangle:
         self.pt2.y += y
 
         return self
+    def cover(self, other):
+        """
+            Zwraca prostokat, ktory pokrywa oba prostokaty.
+        """
+        x1 = min(self.pt1.x, other.pt1.x)
+        y1 = min(self.pt1.y, other.pt1.y)
+        x2 = max(self.pt2.x, other.pt2.x)
+        y2 = max(self.pt2.y, other.pt2.y)
+
+        return Rectangle(x1, y1, x2, y2)
 
 if __name__ == "__main__":
     rectangle = Rectangle(0, 0, 6, 2)
@@ -50,3 +60,4 @@ if __name__ == "__main__":
     assert f"{rectangle.center()}" == "P(3.0, 1.0)"
     assert rectangle.area() == 12.0
     assert f"{rectangle.move(-1, 0)}" == "R(P(-1, 0), P(5, 2))"
+    assert f"{rectangle.cover(Rectangle(1, 1, 2, 2))}" == "R(P(-1, 0), P(5, 2))"
