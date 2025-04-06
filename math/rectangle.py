@@ -49,6 +49,19 @@ class Rectangle:
         y2 = max(self.pt2.y, other.pt2.y)
 
         return Rectangle(x1, y1, x2, y2)
+    def intersection(self, other):
+        """
+            Zwraca prostokat, ktory jest przecieciem dwoch prostokatow.
+        """
+        x1 = max(self.pt1.x, other.pt1.x)
+        y1 = max(self.pt1.y, other.pt1.y)
+        x2 = min(self.pt2.x, other.pt2.x)
+        y2 = min(self.pt2.y, other.pt2.y)
+
+        if x1 >= x2 or y1 >= y2:
+            return None
+
+        return Rectangle(x1, y1, x2, y2)
 
 if __name__ == "__main__":
     rectangle = Rectangle(0, 0, 6, 2)
@@ -59,3 +72,4 @@ if __name__ == "__main__":
     assert rectangle.area() == 12.0
     assert f"{rectangle.move(-1, 0)}" == "R(P(-1, 0), P(5, 2))"
     assert f"{rectangle.cover(Rectangle(1, 1, 2, 2))}" == "R(P(-1, 0), P(5, 2))"
+    assert f"{Rectangle(2, 4, 5, 7).intersection(Rectangle(4, 6, 7, 8))}" == "R(P(4, 6), P(5, 7))"
