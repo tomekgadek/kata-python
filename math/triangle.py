@@ -1,5 +1,5 @@
 """
-    triangle.py: implementacja prostokata w przestrzeni 2D.
+    triangle.py: implementacja trojkota w przestrzeni 2D.
 """
 
 from point import Point
@@ -38,6 +38,15 @@ class Triangle:
         self.pt1 = Point(x1, y1)
         self.pt2 = Point(x2, y2)
         self.pt3 = Point(x3, y3)
+    
+    def __str__(self):
+        return f"T({self.pt1}, {self.pt2}, {self.pt3})"
+    
+    def __repr__(self):
+        return f"Triangle({self.pt1.x}, {self.pt1.y}, {self.pt2.x}, {self.pt2.y}, {self.pt3.x}, {self.pt3.y})"
 
 if __name__ == "__main__":
-    pass
+    triangle = Triangle(0, 0, 1, 1, 2, 0)
+
+    assert f"{triangle}" == "T(P(0, 0), P(1, 1), P(2, 0))"
+    assert repr(triangle) == "Triangle(0, 0, 1, 1, 2, 0)"
