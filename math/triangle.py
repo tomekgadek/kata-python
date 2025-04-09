@@ -30,6 +30,7 @@ class Triangle:
 
     def __init__(self, x1 = 0, y1 = 0, x2 = 0, y2 = 0, x3 = 0, y3 = 0):
         points = {(x1, y1), (x2, y2), (x3, y3)}
+        
         if len(points) < 3:
             raise TriangleError("Points must be distinct and non-collinear!")
         # Check for collinearity using the determinant method
@@ -44,9 +45,32 @@ class Triangle:
     
     def __repr__(self):
         return f"Triangle({self.pt1.x}, {self.pt1.y}, {self.pt2.x}, {self.pt2.y}, {self.pt3.x}, {self.pt3.y})"
+    
+    def center(self):
+        """
+            Zwraca środek trójkąta.
+        """
+        x = (self.pt1.x + self.pt2.x + self.pt3.x) / 3.0
+        y = (self.pt1.y + self.pt2.y + self.pt3.y) / 3.0
+        return Point(x, y)    
+    
+    def area(self):
+        """
+            Zwraca pole powierzchni trójkąta.
+        """
+
+        # obliczam długości boków
+        a = ((self.pt1.x - self.pt2.x) ** 2 + (self.pt1.y - self.pt2.y) ** 2) ** 0.5
+        b = ((self.pt2.x - self.pt3.x) ** 2 + (self.pt2.y - self.pt3.y) ** 2) ** 0.5
+        c = ((self.pt3.x - self.pt1.x) ** 2 + (self.pt3.y - self.pt1.y) ** 2) ** 0.5
+        s = (a + b + c) / 2 # połowa obwodu
+        return (s * (s - a) * (s - b) * (s - c)) ** 0.5 # wzór Herona
 
 if __name__ == "__main__":
-    triangle = Triangle(0, 0, 1, 1, 2, 0)
+    triangle = Triangle(0, 0, 4, 1, 2, 5)
 
-    assert f"{triangle}" == "T(P(0, 0), P(1, 1), P(2, 0))"
-    assert repr(triangle) == "Triangle(0, 0, 1, 1, 2, 0)"
+    assert f"{triangle}" == "T(P(0, 0), P(4, 1), P(2, 5))"
+    assert repr(triangle) == "Triangle(0, 0, 4, 1, 2, 5)"
+    assert triangle.center() == Point(2.0, 2.0)
+    assert round(triangle.area(), 2) == 9.00
+
