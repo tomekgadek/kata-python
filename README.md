@@ -52,4 +52,5 @@ Matematyka
 04. [Implementacja podstawowych operacji na ułamkach](./math/frac.py),
 05. [Implementacja prostokata w przestrzeni 2D](./math/rectangle.py),
 06. [Implementacja klasy Time](./math/time.py),
-07. [Generator wszystkich permutacji podanego zbioru](./math/all_perms.py).
+07. [Generator wszystkich permutacji podanego zbioru](./math/all_perms.py),
+08. [Implementacja trójkota w przestrzeni 2D](./math/triangle.py).
