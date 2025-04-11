@@ -33,10 +33,9 @@ class Rectangle:
 
         return a * b
     def move(self, x, y):
-        self.pt1.x += x
-        self.pt2.x += x
-        self.pt1.y += y
-        self.pt2.y += y
+        for pt in (self.pt1, self.pt2):
+            pt.x += x
+            pt.y += y
 
         return self
     def cover(self, other):

@@ -60,11 +60,20 @@ class Triangle:
         """
 
         # obliczam długości boków
+        # wzór: # a^1/2 == aqrt(a)
         a = ((self.pt1.x - self.pt2.x) ** 2 + (self.pt1.y - self.pt2.y) ** 2) ** 0.5
         b = ((self.pt2.x - self.pt3.x) ** 2 + (self.pt2.y - self.pt3.y) ** 2) ** 0.5
         c = ((self.pt3.x - self.pt1.x) ** 2 + (self.pt3.y - self.pt1.y) ** 2) ** 0.5
         s = (a + b + c) / 2 # połowa obwodu
         return (s * (s - a) * (s - b) * (s - c)) ** 0.5 # wzór Herona
+    def move(self, x, y):
+        """
+            Przesuwa trójkąt o wektor (x, y).
+        """
+        for pt in (self.pt1, self.pt2, self.pt3):
+            pt.x += x
+            pt.y += y
+        return self
 
 if __name__ == "__main__":
     triangle = Triangle(0, 0, 4, 1, 2, 5)
@@ -73,4 +82,4 @@ if __name__ == "__main__":
     assert repr(triangle) == "Triangle(0, 0, 4, 1, 2, 5)"
     assert triangle.center() == Point(2.0, 2.0)
     assert round(triangle.area(), 2) == 9.00
-
+    assert f"{triangle.move(-1, 0)}" == "T(P(-1, 0), P(3, 1), P(1, 5))"
