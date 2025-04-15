@@ -44,7 +44,6 @@ class Frac:
         
         return Frac(other.x * self.y - self.x * other.y, self.y * other.y)
     
-
     def __mul__(self, other):
         other = self._recognize_type(other)
 
@@ -95,6 +94,17 @@ class Frac:
             return self._float_to_frac(other)
 
         return other
+    
+    def __eq__(self, other):
+        if isinstance(other, int):
+            return self.x == other * self.y
+        elif isinstance(other, float):
+            return self.x / self.y == other
+
+        return self.x * other.y == other.x * self.y
+    
+    def __ne__(self, other):
+        return not self.__eq__(other)
 
 if __name__ == "__main__":
     f_1_4 = Frac(1, 4)
