@@ -55,3 +55,12 @@ Matematyka
 07. [Generator wszystkich permutacji podanego zbioru](./math/all_perms.py),
 08. [Implementacja trójkota w przestrzeni 2D](./math/triangle.py),
 09. [Implementacja wielomianiu](./math/poly.py).
+
+Tkinker
+----------------------------
+
+> [Jak utworzyć proste okienko w tkinkerze?](./tkinker/simple_window.py)
+
+Efekt działania skryptu:
+
+![create window tkinker](./tkinker/img/simple_window.png)
