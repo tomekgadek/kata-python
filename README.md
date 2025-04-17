@@ -64,3 +64,9 @@ Tkinker
 Efekt działania skryptu:
 
 ![create window tkinker](./tkinker/img/simple_window.png)
+
+> [Jak dodać tytuł i rozmiar okna w tkinterze?](./tkinker/simple_window_title_and_size.py)
+
+Efekt działania skryptu:
+
+![add title and size window tkinker](./tkinker/img/simple_window_title_and_size.png)
