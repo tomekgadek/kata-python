@@ -62,4 +62,5 @@ Tkinker
 02. [Jak dodać tytuł i rozmiar okna w tkinterze?](./tkinker/simple_window_title_and_size.py) (efekt końcowy: [okno](./tkinker/img/simple_window_title_and_size.png)),
 03. [Jak dodać etykietę do okna w tkinterze?](./tkinker/label.py) (efekt końcowy: [okno](./tkinker/img/label.png)),
 04. [Jak dodać okno komunikatu w tkinterze?](./tkinker/messagebox.py) (efekt końcowy: [okno](./tkinker/img/messagebox_window.png), [komunikat](./tkinker/img/messagebox_popup.png)),
-05. [Aplikacja tkinker zapakowana w klasę](./tkinker/app_class.py) (efekt końcowy: [okno](./tkinker/img/app_class_window.png), [komunikat](./tkinker/img/app_class_popup.png)).
+05. [Aplikacja tkinker zapakowana w klasę](./tkinker/app_class.py) (efekt końcowy: [okno](./tkinker/img/app_class_window.png), [komunikat](./tkinker/img/app_class_popup.png)),
+06. [Jak zastosować pole edycji w praktyce?](./tkinker/input.py) (efekt końcowy: [okno](./tkinker/img/input.png)).
