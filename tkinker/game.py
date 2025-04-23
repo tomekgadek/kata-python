@@ -2,47 +2,55 @@
     game.py: implementacja prostej gry typu 'paper, rock, scissors' w Tkinterze
 """
 
-# TODO: implementacja wymaga jeszcze refaktoryzacji !!!
+# TODO: implementacja wymaga jeszcze refaktoryzacji.
+# TODO: komunikaty są niejasne
 
-from tkinter import Tk, Label, Button
+import tkinter as tk
 import random
 
-available_choices = ["paper", "rock", "scissors"]
+from tkinter import Label, Button
 
-def play(player, cpu):
-    win_with = {"paper": "rock", "rock": "scissors", "scissors": "paper"}
-    if player == cpu:
-        return None
-    elif win_with[player] == cpu:
-        return True
-    else:
-        return False
 
-def choice(choices):
-    return choices[random.randint(0, 2)]
+class GameApp(tk.Tk):
+    def __init__(self):
+        super().__init__()
 
-def play_cmd(player):
-    global text_label
-    cpu = choice(available_choices)
-    is_user_winner = play(player, cpu)
+        self.title("Paper, Rock, Scissors")
+        self.geometry("300x150")
 
-    if is_user_winner is None:
-        text_label.config(text="Tie! Try again!", fg="blue")
-    elif is_user_winner:
-        text_label.config(text="You win... Let's play again", fg="green")
-    else:
-        text_label.config(text="I win, I win!", fg="red")
+        self.available_choices = ["paper", "rock", "scissors"]
 
-root = Tk()
+        self.label = Label(self, text="Let's play paper, rock, scissors!", font=40)
+        self.label.pack(pady=10)
 
-root.title("Paper, Rock, Scissors")
-root.geometry("300x150")
+        Button(self, text="📃 Paper", command=lambda: self.play_cmd("paper")).pack(pady=5)
+        Button(self, text="🤘 Rock", command=lambda: self.play_cmd("rock")).pack(pady=5)
+        Button(self, text="✂️ Scissors", command=lambda: self.play_cmd("scissors")).pack(pady=5)
 
-text_label = Label(root, font=40, text="Let's play paper, rock, scissors!")
-text_label.pack()
+    def play(self, player, cpu):
+        win_with = {"paper": "rock", "rock": "scissors", "scissors": "paper"}
+        if player == cpu:
+            return None
+        elif win_with[player] == cpu:
+            return True
+        else:
+            return False
 
-Button(root, text="📃 Paper", font=40, width=10, command=lambda: play_cmd("paper")).pack()
-Button(root, text="🤘 Rock", font=40, width=10, command=lambda: play_cmd("rock")).pack()
-Button(root, text="✂️ Scissors", font=40, width=10, command=lambda:play_cmd("scissors")).pack()
+    def choice(self):
+        return random.choice(self.available_choices)
 
-root.mainloop()
+    def play_cmd(self, player):
+        cpu = self.choice()
+        is_user_winner = self.play(player, cpu)
+
+        if is_user_winner is None:
+            self.label.config(text="Tie! Try again!", foreground="blue")
+        elif is_user_winner:
+            self.label.config(text="You win... Let's play again", foreground="green")
+        else:
+            self.label.config(text="I win, I win!", foreground="red")
+
+
+if __name__ == "__main__":
+    app = GameApp()
+    app.mainloop()
